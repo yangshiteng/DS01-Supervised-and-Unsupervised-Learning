@@ -46,6 +46,10 @@ Random forest is another flexible supervised machine learning algorithm used for
 
 # Unsupervised Learning
 
+## What is unsupervised learning?
+Unsupervised learning, also known as unsupervised machine learning, uses machine learning algorithms to analyze and cluster unlabeled datasets. These algorithms discover hidden patterns or data groupings without the need for human intervention. Its ability to discover similarities and differences in information make it the ideal solution for exploratory data analysis, cross-selling strategies, customer segmentation, and image recognition.
+
+
 
 # Unsupervised vs. supervised vs. semi-supervised learning
 
