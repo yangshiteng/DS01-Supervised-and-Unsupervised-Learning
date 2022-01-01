@@ -123,6 +123,8 @@ Autoencoders leverage neural networks to compress data and then recreate a new r
 
 ![image](https://user-images.githubusercontent.com/60442877/147844299-52d8b626-c4d4-46dd-ac17-61e09b409d19.png)
 
+
+
 ## Applications of unsupervised learning
 
 Machine learning techniques have become a common method to improve a product user experience and to test systems for quality assurance. Unsupervised learning provides an exploratory path to view data, allowing businesses to identify patterns in large volumes of data more quickly when compared to manual observation. Some of the most common real-world applications of unsupervised learning are:
@@ -133,6 +135,42 @@ Machine learning techniques have become a common method to improve a product use
 - Anomaly detection: Unsupervised learning models can comb through large amounts of data and discover atypical data points within a dataset. These anomalies can raise awareness around faulty equipment, human error, or breaches in security.
 - Customer personas: Defining customer personas makes it easier to understand common traits and business clients' purchasing habits. Unsupervised learning allows businesses to build better buyer persona profiles, enabling organizations to align their product messaging more appropriately.
 - Recommendation Engines: Using past purchase behavior data, unsupervised learning can help to discover data trends that can be used to develop more effective cross-selling strategies. This is used to make relevant add-on recommendations to customers during the checkout process for online retailers.
+
+
+## Unsupervised Learning - Anomaly Detection
+
+### One-Class SVM
+
+Traditionally, many classification problems try to solve the two or multi-class situation. The goal of the machine learning application is to distinguish test data between a number of classes, using training data. But what if you only have data of one class and the goal is to test new data and found out whether it is alike or not like the training data? A method for this task, which gained much popularity the last two decades, is the One-Class Support Vector Machine. 
+
+First look at our problem situation; we would like to determine whether (new) test data is member of a specific class, determined by our training data, or is not. Why would we want this? Imagine a factory type of setting; heavy machinery under constant surveillance of some advanced system. The task of the controlling system is to determine when something goes wrong; the products are below quality, the machine produces strange vibrations or something like a temperature that rises. It is relatively easy to gather training data of situations that are OK; it is just the normal production situation. But on the other side, collection example data of a faulty system state can be rather expensive, or just impossible. If a faulty system state could be simulated, there is no way to guarantee that all the faulty states are simulated and thus recognized in a traditional two-class problem.
+
+To cope with this problem, one-class classification problems (and solutions) are introduced. By just providing the normal training data, an algorithm creates a (representational) model of this data. If newly encountered data is too different, according to some measurement, from this model, it is labeled as out-of-class.
+
+### Isolation Forest
+
+A lot of machine learning algorithms suffer in terms of their performance when outliers are not taken care of. In order to avoid this kind of problem you could, for example, drop them from your sample, cap the values at some reasonable point (based on domain knowledge) or transform the data.
+
+As in my case, I took a lot of features into consideration, I ideally wanted to have an algorithm that would identify the outliers in a multidimensional space. That is when I came across Isolation Forest, a method which in principle is similar to the well-known and popular Random Forest. 
+
+In principle, outliers are less frequent than regular observations and are different from them in terms of values (they lie further away from the regular observations in the feature space). That is why by using such random partitioning they should be identified closer to the root of the tree (shorter average path length, i.e., the number of edges an observation must pass in the tree going from the root to the terminal node), with fewer splits necessary.
+
+The idea of identifying a normal vs. abnormal observation can be observed in Figure 1 from [1]. A normal point (on the left) requires more partitions to be identified than an abnormal point (right).
+
+![image](https://user-images.githubusercontent.com/60442877/147847816-56e0dd47-df44-4b90-993f-dcd62b7d5cfb.png)
+
+As with other outlier detection methods, an anomaly score is required for decision making. In the case of Isolation Forest, it is defined as:
+
+![image](https://user-images.githubusercontent.com/60442877/147847823-8f2c0c63-58cb-485a-af8d-c7e7155ead2e.png)
+
+where h(x) is the path length of observation x, c(n) is the average path length of unsuccessful search in a Binary Search Tree and n is the number of external nodes.
+
+Each observation is given an anomaly score and the following decision can be made on its basis:
+
+- A score close to 1 indicates anomalies
+- Score much smaller than 0.5 indicates normal observations
+- If all scores are close to 0.5 then the entire sample does not seem to have clearly distinct anomalies
+
 
 ## Challenges of unsupervised learning
 
