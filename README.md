@@ -71,7 +71,7 @@ Overlapping clusters differs from exclusive clustering in that it allows data po
 
 Hierarchical clustering, also known as hierarchical cluster analysis (HCA), is an unsupervised clustering algorithm that can be categorized in two ways; they can be agglomerative or divisive. 
 
-##### Agglomerative clustering
+##### 1. Agglomerative clustering (bottoms-up approach)
 
 Agglomerative clustering is considered a “bottoms-up approach.” Its data points are isolated as separate groupings initially, and then they are merged together iteratively on the basis of similarity until one cluster has been achieved. Four different methods are commonly used to measure similarity:
 
@@ -81,6 +81,13 @@ Agglomerative clustering is considered a “bottoms-up approach.” Its data poi
 - Single (or minimum) linkage: This method is defined by the minimum distance between two points in each cluster
 
 Euclidean distance is the most common metric used to calculate these distances; however, other metrics, such as Manhattan distance, are also cited in clustering literature.
+
+##### 2. Divisive clustering (top-down approach)
+
+Divisive clustering can be defined as the opposite of agglomerative clustering; instead it takes a “top-down” approach. In this case, a single data cluster is divided based on the differences between data points. Divisive clustering is not commonly used, but it is still worth noting in the context of hierarchical clustering. These clustering processes are usually visualized using a dendrogram, a tree-like diagram that documents the merging or splitting of data points at each iteration.
+
+![image](https://user-images.githubusercontent.com/60442877/147843672-a5dce210-726b-4725-995f-3231798709ab.png)
+
 
 
 
