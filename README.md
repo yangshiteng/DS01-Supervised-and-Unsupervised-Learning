@@ -88,7 +88,13 @@ Divisive clustering can be defined as the opposite of agglomerative clustering; 
 
 ![image](https://user-images.githubusercontent.com/60442877/147843672-a5dce210-726b-4725-995f-3231798709ab.png)
 
+#### Probabilistic clustering
 
+A probabilistic model is an unsupervised technique that helps us solve density estimation or “soft” clustering problems. In probabilistic clustering, data points are clustered based on the likelihood that they belong to a particular distribution. The Gaussian Mixture Model (GMM) is the one of the most commonly used probabilistic clustering methods.
+
+- Gaussian Mixture Models are classified as mixture models, which means that they are made up of an unspecified number of probability distribution functions. GMMs are primarily leveraged to determine which Gaussian, or normal, probability distribution a given data point belongs to. If the mean or variance are known, then we can determine which distribution a given data point belongs to. However, in GMMs, these variables are not known, so we assume that a latent, or hidden, variable exists to cluster data points appropriately. While it is not required to use the Expectation-Maximization (EM) algorithm, it is a commonly used to estimate the assignment probabilities for a given data point to a particular data cluster.
+
+![image](https://user-images.githubusercontent.com/60442877/147843767-6e251dc3-94de-4f3b-b67e-eefdff736c52.png)
 
 
 # Unsupervised vs. supervised vs. semi-supervised learning
