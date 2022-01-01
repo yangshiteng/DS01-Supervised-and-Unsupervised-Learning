@@ -69,12 +69,20 @@ Overlapping clusters differs from exclusive clustering in that it allows data po
 
 #### Hierarchical clustering
 
-Hierarchical clustering, also known as hierarchical cluster analysis (HCA), is an unsupervised clustering algorithm that can be categorized in two ways; they can be agglomerative or divisive. Agglomerative clustering is considered a “bottoms-up approach.” Its data points are isolated as separate groupings initially, and then they are merged together iteratively on the basis of similarity until one cluster has been achieved. Four different methods are commonly used to measure similarity:
+Hierarchical clustering, also known as hierarchical cluster analysis (HCA), is an unsupervised clustering algorithm that can be categorized in two ways; they can be agglomerative or divisive. 
 
-- Ward’s linkage: This method states that the distance between two clusters is defined by the increase in the sum of squared after the clusters are merged.
+##### Agglomerative clustering
+
+Agglomerative clustering is considered a “bottoms-up approach.” Its data points are isolated as separate groupings initially, and then they are merged together iteratively on the basis of similarity until one cluster has been achieved. Four different methods are commonly used to measure similarity:
+
+- Ward’s linkage: This method states that the distance between two clusters is defined by the increase in the sum of squared after the clusters are merged. The linkage function specifying the distance between two clusters is computed as the increase in the "error sum of squares" (ESS) after fusing two clusters into a single cluster.
 - Average linkage: This method is defined by the mean distance between two points in each cluster
 - Complete (or maximum) linkage: This method is defined by the maximum distance between two points in each cluster
 - Single (or minimum) linkage: This method is defined by the minimum distance between two points in each cluster
+
+Euclidean distance is the most common metric used to calculate these distances; however, other metrics, such as Manhattan distance, are also cited in clustering literature.
+
+
 
 # Unsupervised vs. supervised vs. semi-supervised learning
 
