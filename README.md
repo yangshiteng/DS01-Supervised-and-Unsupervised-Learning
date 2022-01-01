@@ -57,7 +57,7 @@ Unsupervised learning models are utilized for three main tasks—clustering, ass
 
 Clustering is a data mining technique which groups unlabeled data based on their similarities or differences. Clustering algorithms are used to process raw, unclassified data objects into groups represented by structures or patterns in the information. Clustering algorithms can be categorized into a few types, specifically exclusive, overlapping, hierarchical, and probabilistic.
 
--Exclusive and Overlapping Clustering
+- Exclusive and Overlapping Clustering
 
 Exclusive clustering is a form of grouping that stipulates a data point can exist only in one cluster. This can also be referred to as “hard” clustering. The K-means clustering algorithm is an example of exclusive clustering.
 
